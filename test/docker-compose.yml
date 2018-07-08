@@ -1,0 +1,12 @@
+version: "3.4"
+services:
+  web:
+    image: varnish-test-website:1.0
+    build:
+      context: ./website/
+      dockerfile: Dockerfile
+  varnish:
+    image: furkaandogan/varnish:alpine
+    build:
+      context: ../
+      dockerfile: Dockerfile
